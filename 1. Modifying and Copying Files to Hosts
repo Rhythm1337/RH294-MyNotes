@@ -1,8 +1,0 @@
-git clone https://gitlab.com/rgdacosta/classroom_env.git
-cd classroom_emv/
-ansible-navigator run --ee false -m stdout playbook.yml
-
-# -ee false (execution envoirnment) false because you need to 
-# transact against localhost and not the execution envoirnment
-
-vim playbook.yml
