@@ -1,0 +1,39 @@
+---
+- name: Configure system
+  hosts: all
+  remote_user: DEVOPS
+  become: true
+  
+  tasks:
+
+    - name: Configure a custom /etc/motd
+      ansible.builtin.template:
+        src: templates/motd.j2
+        dest: /etc/motd
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Check if the files exists
+      register: motd
+      ansible.builtin.stat:
+        path: /etc/motd
+
+    - name: Copy the custom /etc/issue file
+      ansible.builtin.copy:
+        src: files/issues
+        dest: /etc/issue
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Ensure /etc/issue.net is a symlink to /etc/issue
+      ansible.builtin.file:
+        src: /etc/issue
+        dest: /etc/issue.net
+        state: link
+        owner: root
+        group: root
+        force: yes
+
+    
