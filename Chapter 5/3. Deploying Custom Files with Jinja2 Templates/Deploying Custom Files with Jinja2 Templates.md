@@ -9,8 +9,8 @@ We have **ansible.builtin.template** module that reads your **jinja2** template 
 ## 3. Why should you use Jinja2
 Declarative architecture, you can declare in a very dynamic way, Inside of Jinja2 you can reference variables and you can then associate values for those variables on a per inventory host basis.
 
-## Simple Example
-### 1. Make a file named hello.j2 
+# Simple Example
+## 1. Make a file named hello.j2 
 hello.j2
 ```
 1. # {{ ansible_managed }} 
@@ -18,13 +18,13 @@ hello.j2
 3.
 4. Hello, I am {{ inventory_hostname }}
 ```
-### 2. Explanation per line
+## 2. Explanation per line
 1. **ansible_managed** is a special variable and we use # in at the start so its interpreted as a literal
 2. this is how you comment a line
 3. empty line
 4. variable **inventory_hostname** will be replaced/rendered by the **ansible.builtin.template** module with the actual value associated by the inventory host.
 
-### 3. Making the playbook
+## 3. Making the playbook
 playbook.yml
 ```
 ---
