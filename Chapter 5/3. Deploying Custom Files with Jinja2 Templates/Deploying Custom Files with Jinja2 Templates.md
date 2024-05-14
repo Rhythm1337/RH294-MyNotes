@@ -1,4 +1,6 @@
 # Jinja2
+## What is Jinja2 
+It is a modern day templating language for Python developers.
 ## How it works
 We have **ansible.builtin.template** module that reads your **jinja2** template file, processes the **jinja2** language and renders the final product. This final product is then installed to your inventory host.
 
