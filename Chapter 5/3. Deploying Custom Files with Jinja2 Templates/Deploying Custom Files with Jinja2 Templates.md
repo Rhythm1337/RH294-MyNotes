@@ -66,3 +66,8 @@ ssh devops@servera cat /var/tmp/hello
 2.
 3. Hello, I am servera
 
+**Explanation per line**
+1. c324bb098k7b is the id of the container
+2. blank line
+3. Hello, I am {{ inventory_host }} is now filled with servera now
+
