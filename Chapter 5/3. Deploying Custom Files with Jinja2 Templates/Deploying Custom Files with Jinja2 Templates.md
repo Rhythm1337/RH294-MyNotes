@@ -23,3 +23,21 @@ hello.j2
 2. this is how you comment a line
 3. empty line
 4. variable **inventory_hostname** will be replaced/rendered by the **ansible.builtin.template** module with the actual value associated by the inventory host.
+
+### Making the playbook
+playbook.yml
+```
+---
+- name: Play to demonstrate the basics of jinja2
+  hosts: servera.lab.example.com
+  become: false
+
+  tasks:
+
+    - name: Ensure j2 is rendered and installed
+      ansible.builtin.template:
+        src: hello.j2
+        dest: /var/tmp/hello
+```
+
+
