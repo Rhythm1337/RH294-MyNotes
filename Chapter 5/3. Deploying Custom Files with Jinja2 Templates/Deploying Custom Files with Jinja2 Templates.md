@@ -24,21 +24,8 @@ Declarative architecture, you can declare in a very dynamic way, Inside of Jinja
 3. empty line
 4. variable **inventory_hostname** will be replaced/rendered by the **ansible.builtin.template** module with the actual value associated by the inventory host.
 
-**ansible.cfg**
-```
-[defaults]
-remote_user = devops
-inventory = inventory
-```
-
-**inventory**
-```
-[servera]
-servera.lab.example.com
-```
-
 ## 3. Making the playbook
-playbook.yml
+**playbook.yml**
 ```
 ---
 - name: Play to demonstrate the basics of jinja2
@@ -53,5 +40,16 @@ playbook.yml
         dest: /var/tmp/hello
 ```
 
+**ansible.cfg**
+```
+[defaults]
+remote_user = devops
+inventory = inventory
+```
 
+**inventory**
+```
+[servera]
+servera.lab.example.com
+```
 
