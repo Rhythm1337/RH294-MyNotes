@@ -65,7 +65,8 @@ ssh devops@servera cat /var/tmp/hello
 1. #. Ansible managed: hello.j2 modified on 2024-05-14 14:07:55 by root on c324bb098k7b
 2.
 3. Hello, I am servera
-> ignore the dot after # in the first line 
+> ignore the dot after # in the first line
+
 **Explanation per line**
 1. c324bb098k7b is the id of the container
 2. blank line
