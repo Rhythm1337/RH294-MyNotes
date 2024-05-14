@@ -2,7 +2,7 @@
 ## How it works
 We have **ansible.builtin.template** module that reads your **jinja2** template file and processes the **jinja2** language and it renders a final product and then that final product gets installed to your inventory host.
 
-**template.j2 <--- (1.read) --- _ansible.builtin.template_ --- (2.render) ---> rendered file --- (3.installed) --- inventory host**
+*** template.j2 <--- (1.read) --- ansible.builtin.template --- (2.render) ---> rendered file --- (3.installed) --- inventory host ***
 
 ## Why should you use Jinja2
 Declarative architecture, you can declare in a very dynamic way
