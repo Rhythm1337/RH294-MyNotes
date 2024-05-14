@@ -72,3 +72,6 @@ ssh devops@servera cat /var/tmp/hello
 2. blank line
 3. Hello, I am {{ inventory_host }} is now filled with servera now
 
+# Complex Example
+I dont want to type a 100 lines right now so lets pretend its done
+
