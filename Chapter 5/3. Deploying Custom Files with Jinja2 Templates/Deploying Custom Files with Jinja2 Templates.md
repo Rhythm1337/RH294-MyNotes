@@ -45,6 +45,7 @@ Declarative architecture, you can declare in a very dynamic way, Inside of Jinja
 [defaults]
 remote_user = devops
 inventory = inventory
+ansible_managed = Ansible managed: {file} modifiedon %y-%m-%d %H:%M:%S by {uid} on {host}
 ```
 
 **inventory**
