@@ -18,13 +18,13 @@ Declarative architecture, you can declare in a very dynamic way, Inside of Jinja
 3.
 4. Hello, I am {{ inventory_hostname }}
 ```
-## 2. Explanation per line
+**Explanation per line**
 1. **ansible_managed** is a special variable and we use # in at the start so its interpreted as a literal
 2. this is how you comment a line
 3. empty line
 4. variable **inventory_hostname** will be replaced/rendered by the **ansible.builtin.template** module with the actual value associated by the inventory host.
 
-## 3. Making the playbook
+## 2. Make the playbook
 **playbook.yml**
 ```
 ---
@@ -53,4 +53,16 @@ ansible_managed = Ansible managed: {file} modifiedon %y-%m-%d %H:%M:%S by {uid} 
 [servera]
 servera.lab.example.com
 ```
+
+## 3. Run the playbook
+ansible-navigator run -m stdout playbook.yml
+
+## 4. Verify the changes made
+**In terminal type in**
+ssh devops@servera cat /var/tmp/hello
+
+**You should get the following result**
+1. #. Ansible managed: hello.j2 modified on 2024-05-14 14:07:55 by root on c324bb098k7b
+2.
+3. Hello, I am servera
 
