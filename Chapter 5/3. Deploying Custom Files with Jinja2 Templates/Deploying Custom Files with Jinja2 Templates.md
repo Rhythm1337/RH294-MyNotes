@@ -11,7 +11,7 @@ Declarative architecture, you can declare in a very dynamic way, Inside of Jinja
 
 # Simple Example
 ## 1. Make a file named hello.j2 
-hello.j2
+**hello.j2**
 ```
 1. # {{ ansible_managed }} 
 2. {# this is a comment #}
@@ -24,12 +24,25 @@ hello.j2
 3. empty line
 4. variable **inventory_hostname** will be replaced/rendered by the **ansible.builtin.template** module with the actual value associated by the inventory host.
 
+**ansible.cfg**
+```
+[defaults]
+remote_user = devops
+inventory = inventory
+```
+
+**inventory**
+```
+[servera]
+servera.lab.example.com
+```
+
 ## 3. Making the playbook
 playbook.yml
 ```
 ---
 - name: Play to demonstrate the basics of jinja2
-  hosts: servera.lab.example.com
+  hosts: servera
   become: false
 
   tasks:
@@ -39,5 +52,6 @@ playbook.yml
         src: hello.j2
         dest: /var/tmp/hello
 ```
+
 
 
