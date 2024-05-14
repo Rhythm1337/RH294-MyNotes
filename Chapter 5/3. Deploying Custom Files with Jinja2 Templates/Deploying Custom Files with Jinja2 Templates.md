@@ -11,12 +11,12 @@ Declarative architecture, you can declare in a very dynamic way, Inside of Jinja
 ### Make a file named hello.j2 
 hello.j2
 ```
-# {{ ansible_managed }} 
-{# this is a comment #}
-
-Hello, I am {{ inventory_hostname }}
+1. # {{ ansible_managed }} 
+2. {# this is a comment #}
+3.
+4. Hello, I am {{ inventory_hostname }}
 ```
-### Explanation
+### Explanation per line
 1. **ansible_managed** is a special variable and we use # in at the start so its interpreted as a literal
 2. this line is commented
 3. empty line
